@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyApp</string>
+    <string name="help">Help</string>
+    <string name="actvity_name">Fatigue value check</string>
+    <string name="actvity_name2">Driver fatigue monitor</string>
+    <string name="helptext">It\'s easy to use\n when you can not confirm\n whether you are tired\n or how tired you are.\n just choice the first list\n in the main page.\n The other way is\n designed for driving.\n our application will warn you\n if you are too tired to drive\n\n\nWe come from Communication University of China</string>
+</resources>
