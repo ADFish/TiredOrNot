@@ -46,11 +46,7 @@ public class WatingActivity extends Activity {
             if(detected)
             {
                 //停止旋转
-                barWaiting.setIndeterminateDrawable(getResources().getDrawable(
-                        R.drawable.loading_01));
-                barWaiting.setProgressDrawable(getResources().getDrawable(
-                        R.drawable.loading_01));
-
+                barWaiting.setVisibility(View.GONE);
                 //显示结果
                 showValueDialog();
             }
@@ -67,7 +63,7 @@ public class WatingActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
-        setContentView(R.layout.activity_waiting);
+        setContentView(R.layout.activity_waiting_face);
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,R.layout.f1mytitlebar);
         //新页面接收数据
         Bundle bundle = this.getIntent().getExtras();
@@ -78,7 +74,7 @@ public class WatingActivity extends Activity {
         btnBack =(ImageButton)findViewById(R.id.backimage);
         btnBack.setOnClickListener(listener);
         barWaiting=(ProgressBar)findViewById(R.id.waitingProgressBar);
-
+        barWaiting.setVisibility(View.GONE);
         detectResult=GetValue(fileName);
         //handler_check.postDelayed(timeRun_check, 0);
         handler_tip.postDelayed(timeRun_tip, 5000);

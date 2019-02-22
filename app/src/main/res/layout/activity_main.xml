@@ -46,9 +46,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/btn_video_start"
         android:background="@drawable/play"
-        android:layout_centerHorizontal="true"
         android:layout_marginBottom="32dp"
-        android:layout_alignBottom="@+id/videoView" />
+        android:layout_alignBottom="@+id/videoView"
+        android:layout_centerHorizontal="true" />
 
     <ProgressBar
         style="?android:attr/progressBarStyleHorizontal"

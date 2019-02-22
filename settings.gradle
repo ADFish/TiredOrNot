@@ -1,1 +1,2 @@
-include ':app'
+include ':app', ':facepp_ui_library'
+//13879858906 密码：myapp2017

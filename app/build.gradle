@@ -1,27 +1,40 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.0"
-    defaultConfig {
-        applicationId "com.dyr.myapp"
-        minSdkVersion 17
-        targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+  compileSdkVersion 28
+  buildToolsVersion "24.0.0"
+  defaultConfig {
+    applicationId "com.megvii.awesomedemo.facepp"
+    minSdkVersion 17
+    targetSdkVersion 28
+    versionCode 1
+    versionName "1.0"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-    productFlavors {
-    }
+  }
+  productFlavors {}
+
+  android {
+    useLibrary 'org.apache.http.legacy'
+  }
+}
+repositories{
+  flatDir {
+    dirs 'libs'
+  }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.0.0'
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  testCompile 'junit:junit:4.12'
+  compile 'com.android.support:appcompat-v7:24.0.0'
+  compile project(':facepp_ui_library')
+  compile files('libs/android-async-http-1.4.6.jar')
+  //添加新浪微博分享功能
+  compile(name: 'openDefault-1.0.0-openDefaultRelease', ext: 'aar')
+
 }
